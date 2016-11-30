@@ -8,4 +8,3 @@ The gifs will appear initially as still images, and once clicked, each individua
 
 Known issues include:
 The user is unable to generate their own buttons.
-The gifs pulled remain in their still state even when clicked.

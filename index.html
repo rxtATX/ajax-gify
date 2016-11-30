@@ -44,6 +44,8 @@
             viewImage.attr("src", results[i].images.fixed_height_still.url);
             viewImage.addClass("gif");
             viewImage.attr("data-state", "still")
+            viewImage.attr("data-still", results[i].images.fixed_height_still.url)
+            viewImage.attr("data-animate", results[i].images.fixed_height.url)
            
             gifViewDif.append(p);
             gifViewDif.append(viewImage);
@@ -56,11 +58,11 @@
 
             if (state === "still") {
               console.log(this);
-              $(this).attr("src", results[i].images.fixed_height.url);
+              $(this).attr("src", $(this).data("animate"));
               $(this).attr("data-state", "animate");
             }
             else {
-              $(this).attr("src", results[i].images.fixed_height_still.url);
+              $(this).attr("src", $(this).data("still"));
               $(this).attr("data-state", "still");
             }
           });
@@ -71,8 +73,10 @@
             for (var i = 0; i < gifs.length; i++){
               var b = $("<button>");
               b.addClass("gif");
-              b.attr("src", results[i].images.fixed_height_still.url);
-              b.attr("data-state", "still");
+              b.text($("#userTopic".val().trim()));
+              //Here I have accidentally mixed logic of creating the button and labelling the element.
+              // b.attr("src", results[i].images.fixed_height_still.url);
+              // b.attr("data-state", "still");
               $("#buttonHolder").append(b);
             }
           };
