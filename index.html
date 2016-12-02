@@ -57,7 +57,6 @@
             var state = $(this).attr("data-state");
 
             if (state === "still") {
-              console.log(this);
               $(this).attr("src", $(this).data("animate"));
               $(this).attr("data-state", "animate");
             }
@@ -72,11 +71,7 @@
 
             for (var i = 0; i < gifs.length; i++){
               var b = $("<button>");
-              b.addClass("gif");
-              b.text($("#userTopic".val().trim()));
-              //Here I have accidentally mixed logic of creating the button and labelling the element.
-              // b.attr("src", results[i].images.fixed_height_still.url);
-              // b.attr("data-state", "still");
+              b.html($("#userTopic".val().trim()));
               $("#buttonHolder").append(b);
             }
           };
