@@ -66,17 +66,18 @@
           });
           //Function to change all images to opposite state
           $("#swapState").on("click", function() {
-            var state = $("img").attr("data-state");
-            for (var i = 0; i < results.length; i++) {
+            (viewImage).each(function() {
+            var state = $(this).attr("data-state");
+            
               if (state === "still") {
-                $("img").attr("src", $("img").data("animate"));
-                $("img").attr("data-state", "animate");  
+                $(this).attr("src", $(this).data("animate"));
+                $(this).attr("data-state", "animate");  
               } else {
-                $("img").attr("src", $("img").data("still"));
-                $("img").attr("data-state", "still");                
+                $(this).attr("src", $(this).data("still"));
+                $(this).attr("data-state", "still");                
               }
-            }
-          })
+            })
+          });
     //Establishes the array for the user to fill with new button topics
     var gifs = [];
 
@@ -89,6 +90,9 @@
               b.html(gifs[i]);
               $("#buttonHolder").append(b);
             }
+            b.each(function(){
+              $(this).attr("data-input", gifs[i])
+            })
           };
 
           //How the user input to form is read by program
