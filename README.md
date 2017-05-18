@@ -1,4 +1,4 @@
-# ajax-gify
+# [ajax-gify](https://ancient-savannah-55486.herokuapp.com/)
 
 This is a program which uses the Gify API to pull 10 initially still images per button click.
 
@@ -7,4 +7,5 @@ The user will be able to generate buttons related to their own topics, and use t
 The gifs will appear initially as still images, and once clicked, each individual gif will resume its animation. The animation may be stopped in the same way.
 
 Known issues include:
+No styling elements.
 The user is unable to generate their own buttons.
